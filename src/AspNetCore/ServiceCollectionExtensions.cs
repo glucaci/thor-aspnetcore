@@ -1,6 +1,11 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using System;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using Thor.Core.Abstractions;
+using Thor.Core.Session;
 
-namespace Thor.Core.Aspnet
+namespace Thor.AspNetCore
 {
     /// <summary>
     /// A bunch of convenient extensions methods for <see cref="IServiceCollection"/>.
@@ -8,15 +13,30 @@ namespace Thor.Core.Aspnet
     public static class ServiceCollectionExtensions
     {
         /// <summary>
-        /// Adds configuration for tracing.
+        /// Adds <c>Thor Tracing</c> services to the service collection.
         /// </summary>
-        /// <param name="collection">A service collection to add the tracing configuration to.</param>
-        /// <returns>The provided service collection.</returns>
-        public static IServiceCollection AddTracing(this IServiceCollection collection)
+        /// <param name="services">A <see cref="IServiceCollection"/> instance.</param>
+        /// <returns>The provided <see cref="IServiceCollection"/> instance.</returns>
+        public static IServiceCollection AddTracing(this IServiceCollection services)
         {
-            return collection
+            if (services == null)
+            {
+                throw new ArgumentNullException(nameof(services));
+            }
+
+            return services
                 .AddOptions()
-                .Configure<TracingMiddlewareConfiguration>(c => { });
+                .Configure<TracingStartupConfiguration>(c => { })
+                .AddSingleton(p => p.GetService<IOptions<TracingStartupConfiguration>>().Value)
+                .AddSingleton<ITelemetrySession>(p =>
+                {
+                    TracingStartupConfiguration configuration = p.GetService<TracingStartupConfiguration>();
+
+                    return InProcessTelemetrySession.Create(configuration.ApplicationId);
+                })
+                .AddSingleton<IDiagnosticsListener, HostingDiagnosticsListener>()
+                .AddSingleton<DiagnosticsListenerInitializer>()
+                .AddSingleton<IStartupFilter, TracingStartupFilter>();
         }
     }
 }
