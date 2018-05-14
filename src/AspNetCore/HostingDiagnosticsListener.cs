@@ -39,11 +39,10 @@ namespace Thor.AspNetCore
         public void OnHttpRequestInStart(HttpContext httpContext)
         {
             // todo: implement advanced request tracing
-            // todo: implement tracing id
 
             Uri requestUri = new Uri(httpContext.Request.GetDisplayUrl());
             ServerRequestActivity activity = ServerRequestActivity.Create(httpContext.Request.Method,
-                requestUri, null);
+                requestUri, httpContext.Request.GetActivityId());
 
             httpContext.Features.Set(activity);
         }

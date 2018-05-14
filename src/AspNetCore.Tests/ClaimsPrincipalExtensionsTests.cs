@@ -1,5 +1,4 @@
 ﻿using System;
-using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using Xunit;
 
@@ -12,83 +11,83 @@ namespace Thor.AspNetCore.Tests
         [Fact(DisplayName = "GetId: Should return null if user is null")]
         public void GetId_UserNull()
         {
-            // Arrange
+            // arrange
             ClaimsPrincipal user = null;
 
-            // Act
+            // act
             Guid? userId = user.GetId();
 
-            // Assert
+            // assert
             Assert.Null(userId);
         }
 
         [Fact(DisplayName = "GetId: Should return null if 'sub' is not found")]
         public void GetId_SubNotFound()
         {
-            // Arrange
+            // arrange
             Claim[] claims = new Claim[0];
             ClaimsIdentity identity = new ClaimsIdentity(claims);
             ClaimsPrincipal user = new ClaimsPrincipal(identity);
 
-            // Act
+            // act
             Guid? userId = user.GetId();
 
-            // Assert
+            // assert
             Assert.Null(userId);
         }
 
         [Fact(DisplayName = "GetId: Should return null if 'sub' value is empty")]
         public void GetId_SubValueEmpty()
         {
-            // Arrange
+            // arrange
             Claim[] claims =
             {
-                new Claim(JwtRegisteredClaimNames.Sub, "")
+                new Claim(JwtClaimNames.Sub, "")
             };
             ClaimsIdentity identity = new ClaimsIdentity(claims);
             ClaimsPrincipal user = new ClaimsPrincipal(identity);
 
-            // Act
+            // act
             Guid? userId = user.GetId();
 
-            // Assert
+            // assert
             Assert.Null(userId);
         }
 
         [Fact(DisplayName = "GetId: Should return null if 'sub' value is invalid")]
         public void GetId_SubValueInvalid()
         {
-            // Arrange
+            // arrange
             Claim[] claims =
             {
-                new Claim(JwtRegisteredClaimNames.Sub, "werweee")
+                new Claim(JwtClaimNames.Sub, "werweee")
             };
             ClaimsIdentity identity = new ClaimsIdentity(claims);
             ClaimsPrincipal user = new ClaimsPrincipal(identity);
 
-            // Act
+            // act
             Guid? userId = user.GetId();
 
-            // Assert
+            // assert
             Assert.Null(userId);
         }
         
-        [Fact(DisplayName = "GetId: Should return a valid user id")]
+        [Fact(DisplayName = "GetId: Should return a valid user id if 'sub' value is valid")]
         public void GetId_SubValueValid()
         {
-            // Arrange
+            // arrange
             Guid expectedUserId = Guid.NewGuid();
             Claim[] claims =
             {
-                new Claim(JwtRegisteredClaimNames.Sub, expectedUserId.ToString())
+                new Claim(JwtClaimNames.Sub, expectedUserId.ToString())
             };
             ClaimsIdentity identity = new ClaimsIdentity(claims);
             ClaimsPrincipal user = new ClaimsPrincipal(identity);
 
-            // Act
+            // act
             Guid? userId = user.GetId();
 
-            // Assert
+            // assert
             Assert.Equal(expectedUserId, userId);
         }
 
