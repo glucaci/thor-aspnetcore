@@ -51,9 +51,16 @@
     <PackageReference Include="Microsoft.Extensions.DiagnosticAdapter" Version="2.0.1" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="2.0.2" />
     <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="4.4.1" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.2.2" />
     <PackageReference Include="Thor.Core" Version="1.0.0-preview8" />
     <PackageReference Include="Thor.Core.Http" Version="1.0.0-preview8" />
     <PackageReference Include="Thor.Core.Session" Version="1.0.0-preview8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.IdentityModel.Tokens.Jwt">
+      <HintPath>..\..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\system.identitymodel.tokens.jwt\5.1.4\lib\netstandard1.4\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

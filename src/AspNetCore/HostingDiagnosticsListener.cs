@@ -55,9 +55,7 @@ namespace Thor.AspNetCore
 
             if (activity != null)
             {
-                // todo: implement user id
-
-                activity.SetResponse(httpContext.Response.StatusCode, null);
+                activity.SetResponse(httpContext.Response.StatusCode, httpContext.User.GetId());
                 activity.Dispose();
             }
         }
