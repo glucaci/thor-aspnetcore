@@ -17,7 +17,7 @@ namespace Thor.AspNetCore.FunctionalTest
         public void ConfigureServices(IServiceCollection services)
         {
             services
-                .AddTracing()
+                .AddTracing(Configuration)
                 .AddMvc();
         }
 
