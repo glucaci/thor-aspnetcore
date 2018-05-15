@@ -7,7 +7,6 @@ using Xunit;
 namespace Thor.AspNetCore.Tests
 {
     public class HttpRequestExtensionsTests
-        : IClassFixture<TestServerContext>
     {
         #region GetActivityId
 
