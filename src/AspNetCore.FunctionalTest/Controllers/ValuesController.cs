@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
-using static Thor.Core.DefaultEventSource;
 
 namespace Thor.AspNetCore.FunctionalTest.Controllers
 {
@@ -12,8 +11,6 @@ namespace Thor.AspNetCore.FunctionalTest.Controllers
         [HttpGet]
         public IEnumerable<string> Get()
         {
-            Log.Verbose("Value: [\"value1\", \"value2\"]");
-
             return new string[] { "value1", "value2" };
         }
 
