@@ -32,7 +32,6 @@ namespace Thor.AspNetCore
             }
 
             return services
-                .AddOptions()
                 .AddEventHubTelemetryEventTransmission(configuration)
                 .AddInProcessTelemetrySession(configuration)
                 .AddTracingCore(configuration);
@@ -54,6 +53,7 @@ namespace Thor.AspNetCore
             }
 
             return services
+                .AddOptions()
                 .Configure<TracingConfiguration>(configuration.GetSection("Tracing"))
                 .AddSingleton<IDiagnosticsListener, HostingDiagnosticsListener>()
                 .AddSingleton<DiagnosticsListenerInitializer>()
