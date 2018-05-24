@@ -43,10 +43,10 @@
     <PackageReference Include="Microsoft.Extensions.DiagnosticAdapter" Version="2.0.1" />
     <PackageReference Include="Microsoft.Extensions.Options" Version="2.0.2" />
     <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="4.4.1" />
-    <PackageReference Include="Thor.Core" Version="1.0.0-preview12" />
-    <PackageReference Include="Thor.Core.Http" Version="1.0.0-preview12" />
-    <PackageReference Include="Thor.Core.Session" Version="1.0.0-preview12" />
-    <PackageReference Include="Thor.Core.Transmission.EventHub" Version="1.0.0-preview12" />
+    <PackageReference Include="Thor.Core.Http" Version="1.0.0-preview-0003" />
+    <PackageReference Include="Thor.Core.Session" Version="1.0.0-preview-0003" />
+    <PackageReference Include="Thor.Core.Transmission.BlobStorage" Version="1.0.0-preview-0003" />
+    <PackageReference Include="Thor.Core.Transmission.EventHub" Version="1.0.0-preview-0003" />
   </ItemGroup>
 
 </Project>

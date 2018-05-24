@@ -2,7 +2,9 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Thor.Core;
 using Thor.Core.Session;
+using Thor.Core.Transmission.BlobStorage;
 using Thor.Core.Transmission.EventHub;
 
 namespace Thor.AspNetCore
@@ -32,9 +34,10 @@ namespace Thor.AspNetCore
             }
 
             return services
+                .AddBlobStorageTelemetryAttachmentTransmission(configuration)
                 .AddEventHubTelemetryEventTransmission(configuration)
                 .AddInProcessTelemetrySession(configuration)
-                .AddTracingCore(configuration);
+                .AddTracingMinimum(configuration);
         }
 
         /// <summary>
@@ -44,7 +47,7 @@ namespace Thor.AspNetCore
         /// <param name="services">A <see cref="IServiceCollection"/> instance.</param>
         /// <param name="configuration">A <see cref="IConfiguration"/> instance.</param>
         /// <returns>The provided <see cref="IServiceCollection"/> instance.</returns>
-        public static IServiceCollection AddTracingCore(this IServiceCollection services,
+        public static IServiceCollection AddTracingMinimum(this IServiceCollection services,
             IConfiguration configuration)
         {
             if (services == null)
@@ -53,8 +56,7 @@ namespace Thor.AspNetCore
             }
 
             return services
-                .AddOptions()
-                .Configure<TracingConfiguration>(configuration.GetSection("Tracing"))
+                .AddTracingCore(configuration)
                 .AddSingleton<IDiagnosticsListener, HostingDiagnosticsListener>()
                 .AddSingleton<DiagnosticsListenerInitializer>()
                 .AddSingleton<IStartupFilter, TracingStartupFilter>();

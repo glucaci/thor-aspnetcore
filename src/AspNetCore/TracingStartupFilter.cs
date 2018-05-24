@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
 using Thor.Core;
-using Thor.Core.Abstractions;
+using Thor.Core.Session.Abstractions;
 
 namespace Thor.AspNetCore
 {
