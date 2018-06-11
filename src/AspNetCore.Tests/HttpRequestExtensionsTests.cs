@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Internal;
 using Microsoft.Extensions.Primitives;
+using Thor.Core.Abstractions;
 using Xunit;
 
 namespace Thor.AspNetCore.Tests
@@ -44,7 +45,7 @@ namespace Thor.AspNetCore.Tests
             HttpContext context = new DefaultHttpContext();
             HttpRequest request = new DefaultHttpRequest(context);
 
-            request.Headers.Add("Thor-ActivityId", new StringValues(""));
+            request.Headers.Add(MessageHeaderKeys.ActivityId, new StringValues(""));
 
             // act
             Guid? activityId = request.GetActivityId();
@@ -60,7 +61,7 @@ namespace Thor.AspNetCore.Tests
             HttpContext context = new DefaultHttpContext();
             HttpRequest request = new DefaultHttpRequest(context);
 
-            request.Headers.Add("Thor-ActivityId", new StringValues("invalid"));
+            request.Headers.Add(MessageHeaderKeys.ActivityId, new StringValues("invalid"));
 
             // act
             Guid? activityId = request.GetActivityId();
@@ -77,7 +78,7 @@ namespace Thor.AspNetCore.Tests
             HttpContext context = new DefaultHttpContext();
             HttpRequest request = new DefaultHttpRequest(context);
 
-            request.Headers.Add("Thor-ActivityId", new StringValues(expectedUserId.ToString()));
+            request.Headers.Add(MessageHeaderKeys.ActivityId, new StringValues(expectedUserId.ToString()));
 
             // act
             Guid? activityId = request.GetActivityId();
