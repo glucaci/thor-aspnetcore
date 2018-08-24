@@ -1,6 +1,6 @@
 ![Thor](https://cdn.rawgit.com/ChilliCream/thor-logo/master/img/thor-banner-light.svg)
 
-[![GitHub release](https://img.shields.io/github/release/ChilliCream/thor-aspnetcore.svg)](https://github.com/ChilliCream/thor-aspnetcore/releases) [![NuGet Package](https://img.shields.io/nuget/v/Thor.AspNetCore.svg)](https://www.nuget.org/packages/Thor.AspNetCore/) [![License](https://img.shields.io/github/license/ChilliCream/thor-aspnetcore.svg)](https://github.com/ChilliCream/thor-aspnetcore/releases) [![Build](https://ci.appveyor.com/api/projects/status/ohys2p1c906y4ufg/branch/master?svg=true)](https://ci.appveyor.com/project/rstaib/thor-aspnetcore/branch/master) [![Tests](https://img.shields.io/appveyor/tests/rstaib/thor-aspnetcore/master.svg)](https://ci.appveyor.com/project/rstaib/thor-aspnetcore) [![Coverage Status](https://sonarcloud.io/api/project_badges/measure?project=ThorAspNetCore&metric=coverage)](https://sonarcloud.io/dashboard?id=ThorAspNetCore) [![Quality](https://sonarcloud.io/api/project_badges/measure?project=ThorAspNetCore&metric=alert_status)](https://sonarcloud.io/dashboard?id=ThorAspNetCore) [![better code](https://bettercodehub.com/edge/badge/ChilliCream/thor-aspnetcore)](https://bettercodehub.com/results/ChilliCream/thor-aspnetcore)
+[![GitHub release](https://img.shields.io/github/release/ChilliCream/thor-aspnetcore.svg)](https://github.com/ChilliCream/thor-aspnetcore/releases) [![NuGet Package](https://img.shields.io/nuget/v/Thor.AspNetCore.svg)](https://www.nuget.org/packages/Thor.AspNetCore/) [![License](https://img.shields.io/github/license/ChilliCream/thor-aspnetcore.svg)](https://github.com/ChilliCream/thor-aspnetcore/releases) [![Build](https://ci.appveyor.com/api/projects/status/ohys2p1c906y4ufg/branch/master?svg=true)](https://ci.appveyor.com/project/rstaib/thor-aspnetcore-8x6gt/branch/master) [![Tests](https://img.shields.io/appveyor/tests/rstaib/thor-aspnetcore-8x6gt/master.svg)](https://ci.appveyor.com/project/rstaib/thor-aspnetcore-8x6gt) [![Coverage Status](https://sonarcloud.io/api/project_badges/measure?project=ThorAspNetCore&metric=coverage)](https://sonarcloud.io/dashboard?id=ThorAspNetCore) [![Quality](https://sonarcloud.io/api/project_badges/measure?project=ThorAspNetCore&metric=alert_status)](https://sonarcloud.io/dashboard?id=ThorAspNetCore) [![better code](https://bettercodehub.com/edge/badge/ChilliCream/thor-aspnetcore)](https://bettercodehub.com/results/ChilliCream/thor-aspnetcore)
 
 ---
 
@@ -29,7 +29,6 @@ events into an activity.
 
 ```csharp
     ...
-}
 ```
 
 ## Documentation
