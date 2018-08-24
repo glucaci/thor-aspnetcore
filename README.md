@@ -1,8 +1,10 @@
-# Thor AspNetCore
+![Thor](https://cdn.rawgit.com/ChilliCream/thor-logo/master/img/thor-banner-light.svg)
 
-[![release](https://img.shields.io/github/release/ChilliCream/thor-aspnetcore.svg)](https://github.com/ChilliCream/thor-aspnetcore/releases) [![package](https://img.shields.io/nuget/v/Thor.AspNetCore.svg)](https://www.nuget.org/packages/Thor.AspNetCore) [![license](https://img.shields.io/github/license/ChilliCream/thor-aspnetcore.svg)](https://github.com/ChilliCream/thor-aspnetcore/blob/master/LICENSE) [![build](https://img.shields.io/appveyor/ci/rstaib/thor-aspnetcore/master.svg)](https://ci.appveyor.com/project/rstaib/thor-aspnetcore) [![tests](https://img.shields.io/appveyor/tests/rstaib/thor-aspnetcore/master.svg)](https://ci.appveyor.com/project/rstaib/thor-aspnetcore) [![coverage](https://img.shields.io/coveralls/ChilliCream/thor-aspnetcore.svg)](https://coveralls.io/github/ChilliCream/thor-aspnetcore?branch=master)
+[![GitHub release](https://img.shields.io/github/release/ChilliCream/thor-aspnetcore.svg)](https://github.com/ChilliCream/thor-aspnetcore/releases) [![NuGet Package](https://img.shields.io/nuget/v/Thor.AspNetCore.svg)](https://www.nuget.org/packages/Thor.AspNetCore/) [![License](https://img.shields.io/github/license/ChilliCream/thor-aspnetcore.svg)](https://github.com/ChilliCream/thor-aspnetcore/releases) [![Build](https://ci.appveyor.com/api/projects/status/ohys2p1c906y4ufg/branch/master?svg=true)](https://ci.appveyor.com/project/rstaib/thor-aspnetcore/branch/master) [![Tests](https://img.shields.io/appveyor/tests/rstaib/thor-aspnetcore/master.svg)](https://ci.appveyor.com/project/rstaib/thor-aspnetcore) [![Coverage Status](https://sonarcloud.io/api/project_badges/measure?project=ThorAspNetCore&metric=coverage)](https://sonarcloud.io/dashboard?id=ThorAspNetCore) [![Quality](https://sonarcloud.io/api/project_badges/measure?project=ThorAspNetCore&metric=alert_status)](https://sonarcloud.io/dashboard?id=ThorAspNetCore) [![better code](https://bettercodehub.com/edge/badge/ChilliCream/thor-aspnetcore)](https://bettercodehub.com/results/ChilliCream/thor-aspnetcore)
 
-**The _AspNet_ _Core_ for _Thor_**
+---
+
+**The _AspNet_ _Core_ implementation for _Thor_**
 
 The tracing core contains everything to enable _ETW_ tracing in your _.net_ application.
 
