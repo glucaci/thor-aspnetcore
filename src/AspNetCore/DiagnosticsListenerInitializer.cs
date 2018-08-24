@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
@@ -27,6 +27,7 @@ namespace Thor.AspNetCore
         public void Dispose()
         {
             Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         protected virtual void Dispose(bool disposing)
@@ -43,6 +44,7 @@ namespace Thor.AspNetCore
         /// <inheritdoc />
         public void OnCompleted()
         {
+
         }
 
         /// <inheritdoc />

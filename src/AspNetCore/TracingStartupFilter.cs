@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,7 +14,6 @@ namespace Thor.AspNetCore
     public class TracingStartupFilter
         : IStartupFilter
     {
-        private readonly IApplicationLifetime _applicationLifetime;
         private readonly IOptions<TracingConfiguration> _configurationAccessor;
         private readonly ITelemetrySession _session;
 
@@ -27,8 +26,11 @@ namespace Thor.AspNetCore
         public TracingStartupFilter(IApplicationLifetime applicationLifetime,
             IOptions<TracingConfiguration> configurationAccessor, ITelemetrySession session)
         {
-            _applicationLifetime = applicationLifetime ??
+            if (applicationLifetime == null)
+            {
                 throw new ArgumentNullException(nameof(applicationLifetime));
+            }
+            
             _configurationAccessor = configurationAccessor ??
                 throw new ArgumentNullException(nameof(configurationAccessor));
             _session = session ?? throw new ArgumentNullException(nameof(session));
