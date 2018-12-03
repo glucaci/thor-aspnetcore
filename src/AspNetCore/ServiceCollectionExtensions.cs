@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -29,6 +29,7 @@ namespace Thor.AspNetCore
             {
                 throw new ArgumentNullException(nameof(services));
             }
+
             if (configuration == null)
             {
                 throw new ArgumentNullException(nameof(configuration));

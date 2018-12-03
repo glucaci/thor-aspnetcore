@@ -9,8 +9,6 @@ namespace Thor.AspNetCore
     {
         public static Guid? GetId(this ClaimsPrincipal user)
         {
-            // todo: make the claim type for selecting the user identifier configurable
-
             string rawUserId = user?.Claims?
                 .Where(c => c.Type == JwtRegisteredClaimNames.Sub)
                 .Select(c => c.Value)

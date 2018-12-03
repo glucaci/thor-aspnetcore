@@ -44,12 +44,13 @@ namespace Thor.AspNetCore
         /// <inheritdoc />
         public void OnCompleted()
         {
-
+            // do nothing
         }
 
         /// <inheritdoc />
         public void OnError(Exception error)
         {
+            // do nothing
         }
 
         /// <inheritdoc />

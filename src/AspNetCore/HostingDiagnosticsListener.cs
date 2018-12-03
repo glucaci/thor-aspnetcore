@@ -32,14 +32,12 @@ namespace Thor.AspNetCore
         [DiagnosticName("Microsoft.AspNetCore.Hosting.HttpRequestIn")]
         public void OnHttpRequestIn()
         {
-            // do nothing here
+            // for registration purposes only; do not remove this empty block!
         }
 
         [DiagnosticName("Microsoft.AspNetCore.Hosting.HttpRequestIn.Start")]
         public void OnHttpRequestInStart(HttpContext httpContext)
         {
-            // todo: implement advanced request tracing
-
             Uri requestUri = new Uri(httpContext.Request.GetDisplayUrl());
             ServerRequestActivity activity = ServerRequestActivity.Create(httpContext.Request.Method,
                 requestUri, httpContext.Request.GetActivityId());
