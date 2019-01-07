@@ -1,7 +1,8 @@
-﻿using System;
+using System;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Http.Extensions;
 using Microsoft.Extensions.DiagnosticAdapter;
+using Thor.Core.Abstractions;
 using Thor.Core.Http;
 
 namespace Thor.AspNetCore
